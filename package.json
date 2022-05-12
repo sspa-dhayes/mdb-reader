@@ -55,8 +55,8 @@
     "scripts": {
         "prepublishOnly": "npm run build",
         "prebuild": "rimraf lib",
-        "prepare:node": "cp src/environment/node.ts src/environment/index.ts",
-        "prepare:browser": "cp src/environment/browser.ts src/environment/index.ts",
+        "prepare:node": "copy /Y .\\src\\environment\\node.ts .\\src\\environment\\index.ts",
+        "prepare:browser": "copy /Y .\\src\\environment\\browser.ts .\\src\\environment\\index.ts",
         "build": "npm run build:node && npm run build:browser",
         "build:node": "npm run prepare:node && ttsc -P tsconfig.json",
         "build:browser": "npm run prepare:browser && ttsc -P tsconfig.browser.json",
